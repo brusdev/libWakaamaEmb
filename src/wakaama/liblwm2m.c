@@ -434,7 +434,8 @@ next_step:
 
         case STATE_REG_FAILED:
             // TODO avoid infinite loop by checking the bootstrap info is different
-            contextP->state = STATE_BOOTSTRAP_REQUIRED;
+            //contextP->state = STATE_BOOTSTRAP_REQUIRED;
+            contextP->state = STATE_INITIAL;
             goto next_step;
             break;
 
@@ -450,7 +451,8 @@ next_step:
         if (registration_getStatus(contextP) == STATE_REG_FAILED)
         {
             // TODO avoid infinite loop by checking the bootstrap info is different
-            contextP->state = STATE_BOOTSTRAP_REQUIRED;
+            //contextP->state = STATE_BOOTSTRAP_REQUIRED;
+            contextP->state = STATE_INITIAL;
             goto next_step;
             break;
         }
